@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bGoToCalculatorActivity : Button
     private lateinit var bGoToPlayerActivity : Button
     private lateinit var bGoToLocationActivity : Button
+    private lateinit var bGoToSocketActivity: Button
+    private lateinit var bGoToSaveLocationActivity : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         bGoToCalculatorActivity = findViewById(R.id.go_to_calculator_activity)
         bGoToPlayerActivity = findViewById(R.id.go_to_player_activity)
         bGoToLocationActivity = findViewById(R.id.go_to_location_activity)
+        bGoToSocketActivity = findViewById(R.id.go_to_socket_activity)
+        bGoToSaveLocationActivity = findViewById(R.id.go_to_save_location_activity)
     }
     override fun onStart() {
         super.onStart()
@@ -50,11 +54,20 @@ class MainActivity : AppCompatActivity() {
             val randomIntent = Intent(this, LocationActivity::class.java)
             startActivity(randomIntent)
         });
-        var counter : Int = 0
-        for( i in 0..10000000){
-            counter++
-            Log.d (log_tag, counter.toString())
-        }
+        bGoToSocketActivity.setOnClickListener({
+            val randomIntent = Intent(this, SocketActivity::class.java)
+            startActivity(randomIntent)
+        });
+//        bGoToSaveLocationActivity.setOnClickListener({
+//            val randomIntent = Intent(this, SaveLocationActivity::class.java)
+//            startActivity(randomIntent)
+//        });
+
+//        var counter : Int = 0
+//        for( i in 0..10000000){
+//            counter++
+//            Log.d (log_tag, counter.toString())
+//        }
     }
 
     override fun onPause() {
