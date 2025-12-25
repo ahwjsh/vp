@@ -40,10 +40,10 @@
             android:text="Socket" />
 
         <Button
-            android:id="@+id/go_to_save_location_activity"
+            android:id="@+id/go_to_location_data_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save location" />
+            android:text="Location data" />
 
     </LinearLayout>
 

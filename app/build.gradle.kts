@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -43,7 +46,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation("com.google.android.gms:play-services-location:21.2.0") // -->> Location
-    implementation ("org.zeromq:jeromq:0.5.0") // -->> JeroMQ
+    implementation ("org.zeromq:jeromq:0.5.0")
+//    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx) // -->> JeroMQ
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
